@@ -5,3 +5,9 @@ INSERT INTO inquiry(name, email, contents, created)
 VALUES('Emma', 'sample2@example.com', 'GoodMorning', '2019-12-18 12:10:52');
 INSERT INTO inquiry(name, email, contents, created)
 VALUES('William', 'sample3@example.com', 'GoodEvening', '2019-12-18 15:10:52');
+
+INSERT INTO survey(age, satisfaction, comment, created)
+VALUES(29, 3, 'GoodEvening', '2019-12-18 15:10:52'),
+      (21, 4, 'GoodEvening', '2019-12-18 15:10:52'),
+      (72, 5, 'GoodEvening', '2019-12-18 15:10:52');
+      
