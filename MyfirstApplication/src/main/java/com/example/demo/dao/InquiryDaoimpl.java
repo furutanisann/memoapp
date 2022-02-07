@@ -51,5 +51,13 @@ public class InquiryDaoimpl implements InquiryDao{
 		}
 		return list;
 	}
+// 例外処理検証
+	@Override
+	public int updateInquiry(Inquiry inquiry) {
+		return jdbcTemplate.update("UPDATE inquiry SET name = ?,email = ?, contents = ? "
+									+ " WHERE id =?",
+									inquiry.getName(),inquiry.getEmail(),inquiry.getContents(),
+									inquiry.getId());
+	}
 
 }

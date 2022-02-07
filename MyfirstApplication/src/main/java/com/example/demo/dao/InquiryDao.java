@@ -9,6 +9,9 @@ import com.example.demo.app.entity.Inquiry;
 public interface InquiryDao {
 	
 	void insertInquiry(Inquiry inquiry);
+
+// 例外処理検証用
+	int updateInquiry(Inquiry inquiry);
 	
 	List<Inquiry> getAll();
 }
