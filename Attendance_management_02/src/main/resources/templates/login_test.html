@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>ログイン画面</title>
+</head>
+<body>
+<!-- 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!------ ↑bootstrap 全般 ---------->
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- 会社表示アイコン -->
+            <div class="fadeIn first">
+                <img src="" id="icon" alt="User Icon" />
+            </div>
+            <!-- ログインフォーム -->
+            <!-- @{login}で自動にCSRFトークン設定 -->
+            <form method="post" th:action="@{/login}">
+             	<div th:if="${param.error}">
+	            	ログインに失敗しました
+	           		<div th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null}">
+                		<span th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}"></span>
+		            </div>
+		        </div>
+		        <div th:if="${param.logout}">
+		            ログアウトしました
+		        </div>
+                <input type="text" id="login" class="fadeIn second" name="username" placeholder="社員ID">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="パスワード">
+                <input type="submit" class="fadeIn fourth" value="ログイン">
+            </form>
+            <!-- パスワード再設定（設定しない可能性あり） -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">パスワードがわからない</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
